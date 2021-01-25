@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package grpc.return.v1;
+
+service Return {
+  rpc GetMoney(AccountPlat) returns (Charge) {}
+}
+
+message AccountPlat {
+  bytes account = 1;
+  bytes platform = 2;
+}
+
+message Charge {
+  int32 money = 1;
+}
